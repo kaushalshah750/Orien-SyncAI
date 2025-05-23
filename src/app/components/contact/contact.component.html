@@ -106,9 +106,14 @@
                 <span *ngIf="submitted">Sending...</span>
               </button>
               
+              <!-- Error Message -->
+              <div *ngIf="formSubmitted && iserror" class="mt-4 p-3 bg-red-50 text-red-700 rounded-lg">
+                {{errorMessage}}
+              </div>
+              
               <!-- Success Message -->
-              <div *ngIf="formSubmitted" class="mt-4 p-3 bg-green-50 text-green-700 rounded-lg">
-                Thank you! Your message has been sent successfully.
+              <div *ngIf="formSubmitted && !iserror" class="mt-4 p-3 bg-green-50 text-green-700 rounded-lg">
+                {{successMessage}}
               </div>
             </form>
           </div>
